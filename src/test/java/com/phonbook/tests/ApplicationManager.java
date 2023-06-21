@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class AppLicationManager {
+public class ApplicationManager {
     WebDriver driver;
 
     public void init() {
@@ -119,5 +119,23 @@ public class AppLicationManager {
 
     public boolean isHomeComponentPresent1() {
         return isElementPresent1(By.xpath("//h1[text()='Home Component']"));
+    }
+
+    public boolean isLogoPresent() {
+        return isElementPresent1(By.xpath("//h1"));
+    }
+
+    public boolean isHomeLinkPresent() {
+        return isElementPresent1(By.xpath("//a[@href='/home']"));
+    }
+
+    public boolean isAboutLinkPresent() {
+        return isElementPresent1(By.xpath("//a[@href='/about']"));
+    }
+    public void searchNewCreatedContact() {
+        click(By.cssSelector("h3"));
+    }
+    public void removeElement() {
+        click(By.xpath("//button[text()='Remove']"));
     }
 }
