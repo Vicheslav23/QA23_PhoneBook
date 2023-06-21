@@ -132,10 +132,10 @@ public class ApplicationManager {
     public boolean isAboutLinkPresent() {
         return isElementPresent1(By.xpath("//a[@href='/about']"));
     }
-    public void searchNewCreatedContact() {
+    public void searchNewContact() {
         click(By.cssSelector("h3"));
     }
-    public void removeElement() {
+    public void deleteContact() {
         click(By.xpath("//button[text()='Remove']"));
     }
 }
