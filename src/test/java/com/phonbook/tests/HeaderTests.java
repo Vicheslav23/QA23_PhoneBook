@@ -7,21 +7,21 @@ public class HeaderTests extends TestBase{
 
         @Test
         public void searchHeader(){
-            Assert.assertTrue(app.isLogoPresent());
+            Assert.assertTrue(app.getHeader().isLogoPresent());
         }
 
         @Test
         public void searchHome(){
-            Assert.assertTrue(app.isHomeLinkPresent());
+            Assert.assertTrue(app.getHeader().isHomeLinkPresent());
         }
 
         @Test
         public void searchAbout(){
-            Assert.assertTrue(app.isAboutLinkPresent());
+            Assert.assertTrue(app.getHeader().isAboutLinkPresent());
         }
 
         @Test
         public void searchLogin(){
-            Assert.assertTrue(app.isLoginLinkPresent());
+            Assert.assertTrue(app.getHeader().isLoginLinkPresent());
         }
     }

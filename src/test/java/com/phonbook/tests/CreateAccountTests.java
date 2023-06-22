@@ -9,13 +9,13 @@ public class CreateAccountTests extends TestBase{
 //  Предварительное условие: пользователь должен выйти из системы
     @BeforeMethod
     public void ensurePrecondition(){
-        if (!app.isLoginLinkPresent()) {
-            app.clickOnSignOutButton();
+        if (!app.getHeader().isLoginLinkPresent()) {
+            app.getHeader().clickOnSignOutButton();
         }
 
 //      нажмите на ссылку «Войти»
 //        driver.findElement(By.xpath("//a[.='LOGIN']")).click(); => optimiziruem
-        app.clickOnLoginLink();
+        app.getHeader().clickOnLoginLink();
     }
 
     @Test
@@ -23,15 +23,15 @@ public class CreateAccountTests extends TestBase{
 
 //        Введите поле электронной почты
 //        Введите поле пароля
-        app.fillLoginRegistrationForm(new User()
+        app.getUser().fillLoginRegistrationForm(new User()
                 .setEmail("toto@gmai.com")
                 .setPassword("Toto123$-_$"));
 
 //       нажмите «Регистрация»
-        app.clickOnRegistrationButton();
+        app.getUser().clickOnRegistrationButton();
 
 //       заявить о том, что пользователь вошел в систему (отображается кнопка «Выйти»)
-        Assert.assertTrue(app.isAlertPresent());
+        Assert.assertTrue(app.getUser().isAlertPresent());
     }
 
 }
