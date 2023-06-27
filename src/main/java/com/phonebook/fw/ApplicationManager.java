@@ -1,17 +1,17 @@
-package com.phonbook.tests;
+package com.phonebook.fw;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
-import java.util.List;
 
 public class ApplicationManager {
 
     String browser;
-    WebDriver driver;
+    public WebDriver driver;
     UserHelper user;
     ContactHelper contact;
     HeaderHelper header;
@@ -35,16 +35,17 @@ public class ApplicationManager {
     }
 
     public void init() {
+        System.err.close(); // zakrutie sistemnux predypregdeniy v konsole
 
         if (browser.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            driver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase("edge")){
             EdgeOptions options = new EdgeOptions();
             options.addArguments("remote-allow-origins=*");
             driver = new EdgeDriver(options);
         }
-
-        driver = new ChromeDriver();
 
         driver.get("https://telranedu.web.app");
         driver.manage().window().maximize();

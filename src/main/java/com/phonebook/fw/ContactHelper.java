@@ -1,5 +1,6 @@
-package com.phonbook.tests;
+package com.phonebook.fw;
 
+import com.phonebook.model.Contact;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,10 +9,11 @@ import java.util.List;
 
 public class ContactHelper extends BaseHelper {
     public ContactHelper(WebDriver driver) {
+
         super(driver);
     }
-
     public void clickOnSaveButton() {
+
         click(By.cssSelector(".add_form__2rsm2 button"));
     }
 
@@ -31,6 +33,10 @@ public class ContactHelper extends BaseHelper {
         }
         return false;
     }
+
+
+
+//    homeWork 37-41
     public void searchNewContact() {
         click(By.cssSelector("h3"));
     }
@@ -49,6 +55,13 @@ public class ContactHelper extends BaseHelper {
 
     public boolean isContactListEmpty() {
         return driver.findElements(By.cssSelector(".contact-item_card__2SOIM")).isEmpty();
+    }
+
+    public int sizeOfContacts() {
+        if (!isElementPresent(By.cssSelector(".contact-item_card__2SOIM"))) {
+            return driver.findElements(By.cssSelector(".contact-item_card__2SOIM")).size();
+        }
+        return 0;
     }
 }
 

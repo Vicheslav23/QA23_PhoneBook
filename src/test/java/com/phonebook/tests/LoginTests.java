@@ -1,4 +1,4 @@
-package com.phonbook.tests;
+package com.phonebook.tests;
 
 import com.phonebook.model.User;
 import org.testng.Assert;
@@ -17,7 +17,7 @@ public class LoginTests extends TestBase{
 //      нажмите на ссылку «Войти»
         app.getHeader().clickOnLoginLink();
     }
-    @Test
+    @Test(priority = 1)
     public void loginPositiveTest(){
 
 //        Введите поле электронной почты
@@ -31,7 +31,7 @@ public class LoginTests extends TestBase{
 //       заявить о том, что пользователь вошел в систему (отображается кнопка «Выйти»)
         Assert.assertTrue(app.getHeader().isSignOutButtonPresent());
     }
-    @Test
+    @Test(priority = 2)
     public void loginNegativeWithoutPasswordTest(){
 
 //        Введите поле электронной почты
