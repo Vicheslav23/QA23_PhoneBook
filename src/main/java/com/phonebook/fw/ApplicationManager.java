@@ -59,10 +59,6 @@ public class ApplicationManager {
     public void stop() {
         driver.quit();
     }
-
-
-
-
     //    ili
 
 //    public void removeContact() {

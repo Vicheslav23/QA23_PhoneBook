@@ -38,5 +38,17 @@ public class ContactHelper extends BaseHelper {
     public void deleteContact() {
         click(By.xpath("//button[text()='Remove']"));
     }
+
+
+    public void removeContact() {
+        if (!isContactListEmpty()) {
+            click(By.cssSelector(".contact-item_card__2SOIM"));
+            click(By.xpath("//button[.='Remove']"));
+        }
+    }
+
+    public boolean isContactListEmpty() {
+        return driver.findElements(By.cssSelector(".contact-item_card__2SOIM")).isEmpty();
+    }
 }
 
