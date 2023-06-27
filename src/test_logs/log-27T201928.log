@@ -1,0 +1,7 @@
+1626 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\AIT TR Student\AppData\Local\JetBrains\IdeaIC2022.2\temp-testng-customsuite.xml
+
+6006 [main] INFO  com.phonebook.tests.TestBase -- Start test loginPositiveTest with data: []
+7693 [main] INFO  com.phonebook.tests.TestBase -- PASSED: loginPositiveTest
+7693 [main] INFO  com.phonebook.tests.TestBase -- Stop test
+7693 [main] INFO  com.phonebook.tests.TestBase -- --------------------------------------------------------------
