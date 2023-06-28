@@ -49,17 +49,27 @@ public class CreateContactTests extends TestBase{
 
         app.getContact().clickOnSaveButton();
     }
+    @Test(dataProviderClass = DataProviders.class,dataProvider = "addContactNegativeFromCsvFile")
+    public void addContactFromCsvFileNegativeTest(Contact contact){
 
-    @AfterMethod
-    public void deleteContact(){
-        app.getContact().searchNewContact();
-        app.getContact().deleteContact();
+        app.getHeader().clickOnAddLink();
+        app.getContact().fillAddContactForm(contact);
+
+        app.getContact().clickOnSaveButton();
+
+        Assert.assertTrue(app.getContact().isAlertPresent());
     }
+
+//    @AfterMethod
+//    public void deleteContact(){
+//        app.getContact().searchNewContact();
+//        app.getContact().deleteContact();
+//    }
 
 //    ili
 
-//    @AfterMethod
-//    public void postCondition() {
-//        app.getContact().removeContact();
-//    }
+    @AfterMethod
+    public void postCondition() {
+        app.getContact().removeContact();
+    }
 }
