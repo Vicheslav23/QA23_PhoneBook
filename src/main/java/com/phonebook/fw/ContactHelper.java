@@ -34,8 +34,6 @@ public class ContactHelper extends BaseHelper {
         return false;
     }
 
-
-
 //    homeWork 37-41
     public void searchNewContact() {
         click(By.cssSelector("h3"));
@@ -62,6 +60,17 @@ public class ContactHelper extends BaseHelper {
             return driver.findElements(By.cssSelector(".contact-item_card__2SOIM")).size();
         }
         return 0;
+    }
+
+    public void addContact() {
+        fillAddContactForm(new Contact()
+                .setName("Karl")
+                .setLastname("Adam")
+                .setPhone("1234567890")
+                .setEmail("toto@gmail.com")
+                .setAddress("Pattesen")
+                .setDescription("goalkeeper"));
+        clickOnSaveButton();
     }
 }
 
